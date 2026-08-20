@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../data/videos';
+---
+
+<Layout
+  title="Apoya al Pana"
+  description="Apoya el contenido educativo sobre Bitcoin de Cripto Panas mediante donaciones en sats vía Lightning Network. Valor por valor."
+  path="/apoya-al-pana"
+>
+  <Header />
+
+  <main class="mx-auto max-w-4xl px-4 py-16 text-center">
+    <h1 class="text-4xl font-extrabold text-neutral-50">Valor x Valor</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
+      Si en mis videos o en esta web has encontrado contenido de valor y quieres agradecerlo
+      de alguna forma, la mejor manera es a través del modelo <strong class="text-orange-500">Valor por Valor</strong>.
+      Puedes apoyar mi trabajo enviando una donación en sats mediante mi página en Coinos, o
+      directamente a mi dirección Lightning.
+    </p>
+
+    <div class="mx-auto mt-10 max-w-sm rounded-2xl border border-neutral-800 bg-neutral-900 p-8">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=lightning:criptopanas@coinos.io"
+        alt="Código QR de Lightning para donaciones a Cripto Panas"
+        class="mx-auto h-56 w-56 rounded-lg bg-white p-2"
+        loading="lazy"
+      />
+      <p class="mt-4 font-mono text-sm text-orange-500">{siteConfig.lightning}</p>
+    </div>
+
+    <p class="mx-auto mt-8 max-w-xl text-neutral-400">
+      Y si en este momento no puedes hacer una donación, también un mensaje de agradecimiento
+      en mis redes sociales o en YouTube es muy bienvenido.
+    </p>
+
+    <a
+      href="https://coinos.io/criptopanas"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-8 inline-block rounded-lg bg-orange-500 px-8 py-3 font-semibold text-neutral-950 transition-transform hover:scale-105"
+    >
+      Invítame un café ☕
+    </a>
+  </main>
+
+  <Footer />
+</Layout>

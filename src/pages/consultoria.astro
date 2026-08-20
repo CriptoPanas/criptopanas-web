@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../data/videos';
+
+const services = [
+  {
+    title: 'Primeros pasos en Bitcoin',
+    description: 'Cómo comprar tus primeros sats de forma segura, elegir el exchange correcto y evitar los errores más comunes de principiante.',
+  },
+  {
+    title: 'Autocustodia y hardware wallets',
+    description: 'Configuración de tu hardware wallet (Ledger, Jade, Trezor...), buenas prácticas de backup y cómo crear tu primera wallet multi-firma.',
+  },
+  {
+    title: 'Privacidad y compra/venta P2P',
+    description: 'Cómo comprar y vender BTC en mercados P2P sin KYC, y prácticas de privacidad para proteger tu información.',
+  },
+  {
+    title: 'Informes fiscales (España)',
+    description: 'Elaboración de informes en Cointracking para declarar correctamente tus operaciones con criptomonedas en España.',
+  },
+  {
+    title: 'Cambio de residencia fiscal a Portugal',
+    description: 'Orientación sobre los trámites y pasos necesarios si estás valorando mudarte fiscalmente a Portugal.',
+  },
+];
+---
+
+<Layout
+  title="Consultoría personalizada sobre Bitcoin"
+  description="Asesoramiento 1 a 1 sobre Bitcoin: compra segura, autocustodia, hardware wallets, privacidad y fiscalidad. Reserva tu sesión personalizada."
+  path="/consultoria"
+>
+  <Header />
+
+  <main class="mx-auto max-w-4xl px-4 py-16">
+    <h1 class="text-4xl font-extrabold text-neutral-50">Consultas Personalizadas</h1>
+    <p class="mt-4 text-lg text-neutral-300">
+      ¿Te preguntas cómo comprar BTC y almacenarlos de forma segura? Ofrezco un servicio de
+      consultoría personalizada en Bitcoin diseñado para usuarios de todos los niveles: desde
+      quienes aún no han comprado sus primeros sats hasta quienes quieren crear su primera
+      multi-firma.
+    </p>
+    <p class="mt-4 text-neutral-300">
+      Durante la sesión podrás obtener respuestas claras y prácticas sobre custodia segura,
+      privacidad, compra y venta de BTC en mercados P2P, así como la elaboración de informes
+      fiscales en Cointracking para declarar correctamente en España. Además, si estás
+      valorando cambiar tu residencia fiscal a Portugal, te orientaré sobre los trámites y
+      pasos necesarios para hacerlo correctamente.
+    </p>
+    <p class="mt-4 font-semibold text-neutral-100">
+      Mi objetivo es que salgas de la consulta con soluciones concretas y la tranquilidad de
+      estar tomando las mejores decisiones.
+    </p>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      {services.map((service) => (
+        <div class="rounded-xl border border-neutral-800 bg-neutral-900 p-6">
+          <h2 class="font-semibold text-orange-500">{service.title}</h2>
+          <p class="mt-2 text-sm text-neutral-400">{service.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a
+        href="/contacto"
+        class="inline-block rounded-lg bg-orange-500 px-8 py-4 font-semibold text-neutral-950 transition-transform hover:scale-105"
+      >
+        Reserva tu consulta
+      </a>
+      <p class="mt-3 text-sm text-neutral-500">
+        O escríbeme directamente a{' '}
+        <a href={`mailto:${siteConfig.email}`} class="text-orange-500 hover:underline">{siteConfig.email}</a>
+      </p>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

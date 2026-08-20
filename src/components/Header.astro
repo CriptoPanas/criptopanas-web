@@ -1,0 +1,59 @@
+---
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/consultoria', label: 'Consultoría' },
+  { href: '/tutoriales', label: 'Tutoriales' },
+  { href: '/apoya-al-pana', label: 'Apoya al Pana' },
+  { href: '/contacto', label: 'Contacto' },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-neutral-800 bg-neutral-950/90 backdrop-blur">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a href="/" class="flex items-center gap-2 text-lg font-bold text-orange-500">
+      <img src="/logo.svg" alt="Cripto Panas" class="h-9 w-9" />
+      <span class="text-neutral-50">Cripto Panas</span>
+    </a>
+    <button id="menu-toggle" class="block md:hidden text-neutral-100 text-2xl" aria-label="Abrir menú">☰</button>
+    <ul id="nav-menu" class="hidden md:flex gap-6 text-sm font-medium">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={[
+              'transition-colors hover:text-orange-500',
+              currentPath === item.href ? 'text-orange-500' : 'text-neutral-300',
+            ]}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <ul id="nav-menu-mobile" class="hidden md:hidden flex-col gap-1 border-t border-neutral-800 px-4 py-3 text-sm">
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class:list={[
+            'block rounded px-2 py-2 transition-colors hover:bg-neutral-800 hover:text-orange-500',
+            currentPath === item.href ? 'text-orange-500' : 'text-neutral-300',
+          ]}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('nav-menu-mobile');
+  toggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.toggle('flex');
+  });
+</script>

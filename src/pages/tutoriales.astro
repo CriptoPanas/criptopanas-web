@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { topVideos, siteConfig } from '../data/videos';
+---
+
+<Layout
+  title="Tutoriales de Bitcoin en Video"
+  description="Tutoriales en video sobre Bitcoin: hardware wallets, autocustodia, multi-firma, Lightning Network, privacidad y más. Para todos los niveles."
+  path="/tutoriales"
+>
+  <Header />
+
+  <main class="mx-auto max-w-6xl px-4 py-16">
+    <h1 class="text-4xl font-extrabold text-neutral-50">Tutoriales sobre Bitcoin</h1>
+    <p class="mt-4 max-w-2xl text-lg text-neutral-300">
+      YouTube no es mi trabajo ni mi fuente de ingresos. Comparto los tutoriales porque quiero
+      ayudar a más personas y, al mismo tiempo, porque me obliga a probar nuevas billeteras y
+      mantenerme actualizado, parte que disfruto mucho.
+    </p>
+    <p class="mt-4 max-w-2xl text-neutral-300">
+      En el canal encontrarás distintas playlists con contenido para todos los niveles, desde
+      principiantes hasta usuarios más avanzados. Incluso he creado algunos videos en inglés
+      para llegar a más gente.
+    </p>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {topVideos.map((video) => (
+        <a
+          href={video.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 transition-colors hover:border-orange-500"
+        >
+          <div class="aspect-video overflow-hidden bg-neutral-800">
+            <img
+              src={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
+              alt={video.title}
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform group-hover:scale-105"
+            />
+          </div>
+          <div class="p-4">
+            <h2 class="line-clamp-2 font-semibold text-neutral-100 group-hover:text-orange-500">
+              {video.title}
+            </h2>
+            <p class="mt-2 text-sm text-neutral-500">{video.views_text} vistas · {video.published}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a
+        href={siteConfig.youtube}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold text-orange-500 hover:underline"
+      >
+        Ver el canal completo en YouTube →
+      </a>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
