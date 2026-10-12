@@ -1,3 +1,4 @@
+```astro
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
@@ -7,7 +8,7 @@ import { siteConfig } from '../data/videos';
 
 <Layout
   title="Apoya al Pana"
-  description="Apoya el contenido educativo sobre Bitcoin de Cripto Panas mediante donaciones en sats vía Lightning Network. Valor por valor."
+  description="Apoya el contenido educativo sobre Bitcoin de Cripto Panas mediante donaciones en sats vía Lightning Network y utilizando mis enlaces de referido."
   path="/apoya-al-pana"
 >
   <Header />
@@ -44,7 +45,107 @@ import { siteConfig } from '../data/videos';
     >
       Invítame un café ☕
     </a>
+
+    <section class="mt-20 border-t border-neutral-800 pt-12">
+      <h2 class="text-3xl font-extrabold text-neutral-50">
+        Apoya al Pana con tus compras
+      </h2>
+
+      <p class="mx-auto mt-4 max-w-2xl text-neutral-300">
+        Si compras a través de mis enlaces o códigos de referido, tú puedes beneficiarte
+        de descuentos y yo recibo una pequeña comisión, sin coste adicional para ti.
+        Estos pequeños ingresos me ayudan a seguir creando contenido educativo sobre Bitcoin
+        y mantener el proyecto Cripto Panas. ¡Gracias por tu apoyo!
+      </p>
+
+      <div class="mt-10 grid gap-6 text-left sm:grid-cols-2">
+        <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+          <h3 class="text-xl font-bold text-neutral-50">
+            🛡️ Hardware Wallet JADE
+          </h3>
+          <p class="mt-3 text-neutral-300">
+            Protege tus bitcoins con una hardware wallet de Blockstream.
+            Utiliza el código <strong class="text-orange-500">CRIPTOPANAS</strong>
+            para conseguir un 10 % de descuento.
+          </p>
+          <a
+            href="https://store.blockstream.com/?code=criptopanas"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block font-semibold text-orange-500 hover:underline"
+          >
+            Comprar JADE con descuento →
+          </a>
+        </div>
+
+        <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+          <h3 class="text-xl font-bold text-neutral-50">
+            📊 CoinTracking
+          </h3>
+          <p class="mt-3 text-neutral-300">
+            Gestiona tu cartera de criptomonedas, registra tus operaciones y prepara
+            tus informes fiscales con un 10 % de descuento.
+          </p>
+          <a
+            href="https://cutt.ly/x8FTpbj"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block font-semibold text-orange-500 hover:underline"
+          >
+            Descubrir CoinTracking →
+          </a>
+        </div>
+
+        <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+          <h3 class="text-xl font-bold text-neutral-50">
+            ₿ FixedFloat
+          </h3>
+          <p class="mt-3 text-neutral-300">
+            Intercambia tus altcoins por Bitcoin sin los procesos de identificación
+            (KYC) habituales en muchas plataformas. Comprueba las condiciones y los
+            riesgos antes de realizar un intercambio.
+          </p>
+          <a
+            href="https://cutt.ly/W8HthNC"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block font-semibold text-orange-500 hover:underline"
+          >
+            Visitar FixedFloat →
+          </a>
+        </div>
+
+        <div class="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+          <h3 class="text-xl font-bold text-neutral-50">
+            🔥 Firefish
+          </h3>
+          <p class="mt-3 text-neutral-300">
+            ¿Tienes euros o USDC y quieres obtener rentabilidad? Firefish ofrece
+            opciones de préstamos entre usuarios. También puedes explorar la posibilidad
+            de pedir un préstamo utilizando tus bitcoins como garantía, sin tener que venderlos.
+          </p>
+          <a
+            href="https://firefish.io/?ref=satoshi1050"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-block font-semibold text-orange-500 hover:underline"
+          >
+            Descubrir Firefish →
+          </a>
+        </div>
+      </div>
+
+      <p class="mx-auto mt-8 max-w-2xl text-sm text-neutral-400">
+        Los servicios anteriores son recomendaciones personales y algunos enlaces pueden
+        generarme una comisión. Las inversiones, los intercambios y los préstamos conllevan
+        riesgos; infórmate bien antes de utilizar estos servicios.
+      </p>
+    </section>
   </main>
+
+  <Footer />
+</Layout>
+```
 
   <Footer />
 </Layout>
